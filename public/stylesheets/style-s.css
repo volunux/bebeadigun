@@ -27,7 +27,7 @@ h2 {
 
 p span {
 
-	font-size : 13.5px;
+	font-size : 13.5px !important;
 }
 
 img {
