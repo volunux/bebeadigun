@@ -29,6 +29,8 @@ module.exports = {
 	'artDetail' : (req , res , next) => { 	art = req.params.art , url = String(aConfig.reqOptions.url + art);
 
 			axios.get(url).then((response) => {	data = response.data.status , title = data.title;
+
+				console.log(data);
 																																															res.render('art/art_detail' , { 'title' : title , 'art' : data});				})
 										.catch((err) => {				status = err.response;
 																																															res.render('error' , {'title' : 'Error' , 'error' : status})	});
