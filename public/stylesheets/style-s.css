@@ -22,7 +22,7 @@ h2 span, h3 span, h4 span, h5 span, h6 span  , h2 a , h3 a , h4 a , h5 a , h6 a 
 
 h2 , h2 span {
 
-	font-size : 14px;
+	font-size : 14px !important;
 }
 
 p span {
