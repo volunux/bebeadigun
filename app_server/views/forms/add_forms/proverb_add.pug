@@ -1,0 +1,34 @@
+extends ../../proverb_layout
+
+block content
+	
+	.proverb-add
+	  
+		form(method ='post' ,	action ='' enctype ='application/x-www-form-urlencoded')
+
+			.form-group
+				label(for ='proverb') Proverb * :
+				textarea(id ='proverb' name ='proverb' required ='true' class ='form-control form-control-sm' ) #{(undefined === proverb ? '' : proverb.proverb)}
+
+			.form-group
+				label(for ='literal') Literal Translation * :
+				textarea(id ='literal' name ='literal' required ='true' class ='form-control form-control-sm' ) #{(undefined === proverb ? '' : proverb.literal)}
+
+			.form-group
+				label(for ='meaning') Meaning * :
+				textarea(id ='meaning' name ='meaning' required ='true' class ='form-control form-control-sm' ) #{(undefined === proverb ? '' : proverb.meaning)}
+
+
+			.form-group
+				label(for ='ethnic_group') Ethnic Group * :
+				select(id ='ethnic_group' name ='ethnic_group' class ='form-control form-control-sm' )
+					option(value ='') 
+					for people in eyon
+						if proverb
+							option(value =people._id class ='form-control'  selected =(people._id.toString() == proverb.ethnic_group._id || people._id.toString() == proverb.ethnic_group) ? 'selected' : false) #{people.eyon}
+						else
+							option(value=people._id) #{people.eyon}
+
+
+			p
+				button(type ='submit' title ='Submit' class ='btn btn-primary float-right px-4') Submit

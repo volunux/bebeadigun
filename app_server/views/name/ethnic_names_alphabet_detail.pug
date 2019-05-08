@@ -1,0 +1,15 @@
+extends ../name_layout
+
+block content
+
+		if names
+			.row
+				for name in names
+					.col-sm-6.col-md-4
+						p 
+							a(href ='/' + people + '/name/' + name.name.toLowerCase()) #{name.name}
+						p Ethnic Group Name : #{name.ethnic_group.eyon}
+						p Name Gender : #{name.gender.gender}
+
+				else
+					p No names available under this alphabet.

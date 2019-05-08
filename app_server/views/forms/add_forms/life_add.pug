@@ -1,0 +1,38 @@
+extends ../layouts/layout
+
+include ../includes/text_editor
+
+block content
+	
+	.life-add
+	  
+		form(name ='boboForm' method ='post' ,	action ='' enctype ='multipart/form-data')
+
+			.form-group
+				label(for ='title') Title * : 
+				input(type ='text' id ='title' name ='title' class ='form-control form-control-sm' value =(undefined === life ? '' : life.title))
+
+			.form-group
+				label(for ='ethnic_group') Ethnic Group * : 
+				select(id ='ethnic_group' name ='ethnic_group' class ='form-control form-control-sm' required ='true')
+					option(value ='') 
+					for people in eyon
+						if life
+							option(value =people._id class ='form-control'  selected =(people._id.toString() == life.ethnic_group._id || people._id.toString() == life.ethnic_group) ? 'selected' : false) #{people.eyon}
+						else
+							option(value=people._id) #{people.eyon}
+
+			+textEditor
+
+			.form-group
+				label(for ='cover_image') Photo :
+				input(type ='file' ,	name ='cover_image'	, class ='form-control form-control-sm'	,	accept ='image/*')
+
+			p
+				button(type ='submit' title ='Submit' class ='btn btn-primary float-right px-4') Submit
+
+			p
+				input#pvalue(type='hidden' name ='life_markup')
+				input#plvalue(type='hidden' name ='life_body')
+
+

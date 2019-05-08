@@ -1,0 +1,18 @@
+extends ../layout
+
+include ../includes/image
+
+block content
+
+	.list-photo
+			for image in photos
+					.list-photo-detail
+						.list-photo-photo
+							a(href = '/photo/' + image['photo-url'])
+								img(src ='/photos/a.jpg')
+						p 
+							b Title : 
+							a(href='/photo/' + image['photo-url']) #{image.title}
+						p Period : #{image.genre.genre}
+						p Continent : #{image.continent.name}
+						p Country : #{image.country.name}

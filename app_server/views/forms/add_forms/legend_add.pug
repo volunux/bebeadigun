@@ -1,0 +1,29 @@
+extends ../../legend_layout
+
+block content
+	
+	.legend-add
+	  
+		form(method ='post' ,	action ='' enctype ='multipart/form-data')
+
+			.form-group
+				label(for ='title') Title * : 
+				input(type ='text' id ='title' name ='title' class ='form-control form-control-sm' required ='true' value =(undefined === legend ? '' : legend.title))
+
+			.form-group
+				label(for ='legend') Legend * : 
+				textarea(id ='legend' name ='legend' required ='true' class ='form-control form-control-sm' ) #{(undefined === legend ? '' : legend.legend)}
+
+			.form-group
+				label(for ='ethnic_group') Ethnic Group * : 
+				select(id ='ethnic_group' name ='ethnic_group' class ='form-control form-control-sm' required ='true')
+					option(value ='') 
+					for people in eyon
+						if legend
+							option(value =people._id class ='form-control'  selected =(people._id.toString() == legend.ethnic_group._id || people._id.toString() == legend.ethnic_group) ? 'selected' : false) #{people.eyon}
+						else
+							option(value=people._id) #{people.eyon}
+
+
+			p
+				button(type ='submit' title ='Submit' class ='btn btn-primary float-right px-4') Submit

@@ -1,0 +1,29 @@
+extends ../../folktale_layout
+
+block content
+	
+	.folktale-add
+	  
+		form(method ='post' ,	action ='' enctype ='multipart/form-data')
+
+			.form-group
+				label(for ='title') Title * : 
+				input(type ='text' id ='title' name ='title' class ='form-control form-control-sm' required ='true' value =(undefined === folktale ? '' : folktale.title))
+
+			.form-group
+				label(for ='folktale') Folktale * : 
+				textarea(id ='folktale' name ='folktale' required ='true' class ='form-control form-control-sm' ) #{(undefined === folktale ? '' : folktale.folktale)}
+
+			.form-group
+				label(for ='ethnic_group') Ethnic Group * : 
+				select(id ='ethnic_group' name ='ethnic_group' class ='form-control form-control-sm' required ='true')
+					option(value ='') 
+					for people in eyon
+						if folktale
+							option(value =people._id class ='form-control'  selected =(people._id.toString() == folktale.ethnic_group._id || people._id.toString() == folktale.ethnic_group) ? 'selected' : false) #{people.eyon}
+						else
+							option(value=people._id) #{people.eyon}
+
+
+			p
+				button(type ='submit' title ='Submit' class ='btn btn-primary float-right px-4') Submit

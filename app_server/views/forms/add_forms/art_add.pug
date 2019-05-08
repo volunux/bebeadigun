@@ -1,0 +1,48 @@
+extends ../layouts/layout
+
+include ../includes/text_editor
+
+block content
+	
+	.art-add
+	  
+		form(name ='boboForm' method ='post' ,	action ='' enctype ='multipart/form-data')
+
+			.form-group
+				label(for ='title') Title * : 
+				input(type ='text' id ='title' name ='title' class ='form-control form-control-sm' value =(undefined === art ? '' : art.title))
+
+			.form-group
+				label(for ='ethnic_group') Ethnic Group * : 
+				select(id ='ethnic_group' name ='ethnic_group' class ='form-control form-control-sm' required ='true')
+					option(value ='') 
+					for people in eyon
+						if art
+							option(value =people._id class ='form-control'  selected =(people._id.toString() == art.ethnic_group._id || people._id.toString() == art.ethnic_group) ? 'selected' : false) #{people.eyon}
+						else
+							option(value=people._id) #{people.eyon}
+
+			.form-group
+				label(for ='country') Country * : 
+				select(id ='country' name ='country' class ='form-control form-control-sm' required ='true')
+					option(value ='') 
+					for country in countries
+						if art
+							option(value =country._id class ='form-control'  selected =(country._id.toString() == art.country._id || country._id.toString() == art.country) ? 'selected' : false) #{country.name}
+						else
+							option(value=country._id) #{country.name}
+
+			+textEditor
+
+			.form-group
+				label(for ='photo') Photo :
+				input(type ='file' ,	name ='photo'	, class ='form-control form-control-sm'	,	accept ='image/*')
+
+			p
+				button(type ='submit' title ='Submit' class ='btn btn-primary float-right px-4') Submit
+
+			p
+				input#pvalue(type='' name ='art_markup')
+				input#plvalue(type='' name ='art_body')
+
+

@@ -1,0 +1,23 @@
+extends ../name_layout
+
+block content
+
+		p Name : #{details.name}
+		if details.definition
+			p Definition : #{details.definition}
+		if details.morphology
+			p Morphology : #{details.morphology}
+		if details.gloss
+			p Gloss : #{details.gloss}
+		if details.alphabet
+			p Alphabet : #{details.alphabet.alphabet}
+		if details.gender
+			p Gender : #{details.gender.gender}
+		if details.specie
+			p Specie : #{details.specie.specie}
+		if details.baby
+			p Name Given to a baby ? :
+				if details.baby.baby
+					|	Yes
+				else
+					| No

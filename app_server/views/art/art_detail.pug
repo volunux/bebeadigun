@@ -1,0 +1,18 @@
+extends ../layout
+
+include ../includes/image
+
+block content
+		
+		.art-individual
+			.photo-photo-detail
+				+fixDir(art.photo_detail.path)
+			if art
+				| !{(art.art_markup).replace(/<p><br><\/p>/g , '').replace(/<div><br><\/div>/g , '<br/>').replace(/<br><br><br>/g , '<br/>')}
+				p
+					b Ethnic Group : 
+					| #{art.ethnic_group.eyon}
+
+			if reference
+				for ref in reference
+					li #{ref}

@@ -1,0 +1,71 @@
+extends ../layout
+
+include ../includes/image
+
+block content
+	.photo-detail
+		if photo
+			.photo-photo-detail
+				img(src ='/photos/a.jpg')
+			
+			if photo.title
+				p 
+					b Title 
+					| : #{photo.title}
+			if photo.date
+				p 
+					b Date 
+					| : #{photo.date}
+			if photo.century
+				p 
+					b Period
+					| : #{photo.century.century} Century
+			if photo.genre
+				p 
+					b Category
+					| : #{photo.genre.genre}
+			if photo.country
+				p
+					b Country 
+					| : #{photo.country.name}
+			if photo.continent
+				p 
+					b Continent 
+					| : #{photo.continent.name}
+			if photo.region
+				p 
+					b Region 
+					| : #{photo.region.name}
+			if photo.ethnic_group
+				p
+					b Ethnic Group 
+					| : #{photo.ethnic_group.eyon}
+			if photo.artist
+				p 
+					b Artist 
+					| : #{photo.artist}
+			if photo.findspot
+				p 
+					b Findspot 
+					| : #{photo.findspot}
+			if photo.medium
+				p 
+					b Medium 
+					| : #{photo.medium}
+			if photo.credit
+				p 
+					b Credit 
+					| : #{photo.credit}
+			if photo.dimension
+				p 
+					b Dimension 
+					| : #{photo.dimension}
+			if photo.about
+				p 
+					b About 
+					| : #{photo.about}
+			if photo.vote !== 0
+				p Likes : photo.vote
+
+
+			button(class ='like') Vote for this Image
