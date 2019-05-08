@@ -124,7 +124,7 @@ module.exports = {
 				const errors = validationResult(req);
 
 								if (!errors.isEmpty()) {																												
-																					res.render('forms/add_forms/name_add' , {'title' : 'Add a Name',	'name' : name , 'errors' : errors.array()			});
+																					res.render('forms/add_forms/name_add' , {'title' : 'Add a Name',	'name' : name 		});
         																																																																								}
         							else {
 															url = String(nConfig.reqOptions.url + 'name/' + name.name);
