@@ -6,7 +6,8 @@ block content
 		
 		.art-individual
 			.photo-photo-detail
-				+fixDir(art.photo_detail.path)
+				if art.photo_detail
+					img(src ='/photos/a.jpg')
 			if art
 				| !{(art.art_markup).replace(/<p><br><\/p>/g , '').replace(/<div><br><\/div>/g , '<br/>').replace(/<br><br><br>/g , '<br/>')}
 				p
