@@ -57,8 +57,6 @@ module.exports = {
 
 	'photoAddSubmit' :  [ 	
 
-				upload.single('photo') ,
-
 				body('title'									,		'Title must not be empty.')										.isLength({ min: 3 }).trim(),
 				body('date'										,		'Date should be provided.')										.isLength({ min: 3 }).trim(),
 				body('century'								,		'Century should be provided.')								.isLength({ min: 3 }).trim(),
@@ -69,8 +67,6 @@ module.exports = {
 				body('about'									, 	'About photo content must be provided.')			.isLength({ min: 3 }).trim(),
 
 				sanitizeBody('*').trim(),
-
-				pConfig.validate ,
 				
 				(req , res , next) => {	if (req.file) {	req.body.photo_detail = req.file; }
 
@@ -79,11 +75,8 @@ module.exports = {
 				const errors = validationResult(req);
 
 				var errArr = errors.array();
-																			if (req.body.error) {		errArr.push(req.body.error);		}
 
-																			if (req.body.error2) {	errArr.push(req.body.error2);		}
-
-								if (errArr.length !=- 0) {		url = String(pConfig.reqOptions.url + 'add');
+								if (errArr.length !== 0) {		url = String(pConfig.reqOptions.url + 'add');
 
 											axios.get(url).then((response) => { var	data = response.data.status ,	eyon = data.Eyon ,	genre = data.Genre , country = data.Country ,
 
