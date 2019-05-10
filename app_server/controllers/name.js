@@ -123,6 +123,8 @@ module.exports = {
 
 				const errors = validationResult(req);
 
+				console.log(name);
+
 								if (!errors.isEmpty()) {																												
 																					res.render('forms/add_forms/name_add' , {'title' : 'Add a Name',	'name' : name 		});
         																																																																								}

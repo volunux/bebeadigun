@@ -8,10 +8,11 @@
 	line-height : 2.5em;
 }
 
-h1 {
+h1 , h1 span {
 
 	font-size : 18px;
-	font-weight : normal;
+	font-weight : bold;
+	margin-bottom : 3em solid #000;
 }
 
 
@@ -20,14 +21,9 @@ h2 span, h3 span, h4 span, h5 span, h6 span  , h2 a , h3 a , h4 a , h5 a , h6 a 
 		font-weight : bold !important;
 }
 
-h2 , h2 span {
+h2 {
 
-	font-size : 14px !important;
-}
-
-p span {
-
-	font-size : 13.5px !important;
+	font-size : 14px;
 }
 
 img {
@@ -173,7 +169,30 @@ u {
 .ethnic-list .ethnic-list-item {
 
 	float : left;
-	width : 45%;
+	width : 30%;
+}
+
+.list-posts-item {
+
+	float : none;
+	width : 100%;
+}
+
+}
+
+
+@media screen and (max-width : 320px) {
+
+	.list-photo-detail {
+
+		float : none;
+		width : 100%;
+	}
+
+.ethnic-list .ethnic-list-item {
+
+	float : left;
+	width : 40%;
 }
 
 .list-posts-item {
