@@ -1,13 +1,5 @@
 var mongoose = require('mongoose'),		Schema = mongoose.Schema;
 
-var photoSchema = new Schema({
-																'originalname' : {	'type' : String,	
-																																		'required' : true 	},
-																																														'path' : String,
-																																																							'type' : String, 
-																																																																'encoding' :  String																																								
-													});
-
 var artSchema = new Schema({
 																	'title' : {
 																								'type' : String ,
@@ -22,8 +14,6 @@ var artSchema = new Schema({
 																																	'type' : Schema.Types.ObjectId ,
 																																																		'ref' : 'Eyon' ,
 																																																											'autopopulate' : true 	} ,
-																									'photo_detail' : photoSchema ,
-
 																											'art_markup' : {
 																																				'type' : String ,
 																																													'maxlength' : 100000 ,
