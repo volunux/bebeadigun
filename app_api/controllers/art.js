@@ -39,7 +39,9 @@ module.exports = {
 																																																														.exec((err , ethnicResult) => {
 																																																																																callback(null , ethnicResult);	});	
 																																																							} ,
-																				(arg1 , callback) => { ethnic = arg1['_id'];
+																				(arg1 , callback) => {																																if(arg1 === null) {		arg1 = {};
+																																																	arg1['_id'] = 2233232		}
+																																																															ethnic = arg1['_id'];
 
 																																	Art.find({'ethnic_group' : ethnic})
 																																																														.exec((err , artsResult) => {
