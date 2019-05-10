@@ -11,9 +11,8 @@
 h1 , h1 span {
 
 	font-size : 18px;
-	font-weight : bold;
-	margin-bottom : 3em;
-	border-bottom : 1em solid #000;
+	font-weight : normal;
+	margin-bottom : 2em;
 }
 
 
@@ -25,6 +24,11 @@ h2 span, h3 span, h4 span, h5 span, h6 span  , h2 a , h3 a , h4 a , h5 a , h6 a 
 h2 {
 
 	font-size : 14px;
+}
+
+p span {
+
+	font-size : 13.5px;
 }
 
 img {
@@ -161,6 +165,11 @@ u {
 
 @media screen and (max-width : 540px) {
 
+	.container {
+								width : 100%;
+								padding : 1.5%;
+	}
+
 	.list-photo-detail {
 
 		float : none;
@@ -179,10 +188,24 @@ u {
 	width : 100%;
 }
 
+h1 , h1 span {
+
+	font-size : 18px;
+	font-weight : bold;
+	margin-bottom : 2em;
+	border-bottom : 0.1em solid #000;
+}
+
 }
 
 
 @media screen and (max-width : 320px) {
+
+
+	.container {
+								width : 100%;
+								padding : 1.5%;
+	}
 
 	.list-photo-detail {
 
@@ -200,6 +223,14 @@ u {
 
 	float : none;
 	width : 100%;
+}
+
+h1 , h1 span {
+
+	font-size : 18px;
+	font-weight : bold;
+	margin-bottom : 2em;
+	border-bottom : 1px  #000;
 }
 
 }
