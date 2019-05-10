@@ -168,6 +168,7 @@ u {
 	.container {
 								width : 100%;
 								padding : 1.5%;
+								line-height : 1em;
 	}
 
 	.list-photo-detail {
@@ -204,7 +205,8 @@ h1 , h1 span {
 
 	.container {
 								width : 100%;
-								padding : 1.5%;
+								padding : 2.0%;
+								line-height : 1em;
 	}
 
 	.list-photo-detail {
